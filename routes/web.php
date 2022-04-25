@@ -25,6 +25,10 @@ Route::get('/index.php', function () {
     return view('index');
 });
 
+Route::get('/index.html', function () {
+    return view('index');
+});
+
 Route::get('/checkout.php', function () {
     return view('checkout');
 });
