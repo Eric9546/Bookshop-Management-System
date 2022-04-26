@@ -32,3 +32,7 @@ Route::get('/index.html', function () {
 Route::get('/checkout.php', function () {
     return view('checkout');
 });
+
+Route::get('/checkout.html', function () {
+    return view('checkout');
+});

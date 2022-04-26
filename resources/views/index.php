@@ -6,16 +6,16 @@
     <!-- Banner Starts Here -->
     <div class="banner header-text">
       <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
-          <div class="text-content">
-            <h4>Find your car today!</h4>
-            <h2>Lorem ipsum dolor sit amet</h2>
-          </div>
-        </div>
         <div class="banner-item-02">
           <div class="text-content">
-            <h4>Fugiat Aspernatur</h4>
-            <h2>Laboriosam reprehenderit ducimus</h2>
+            <h4>Find your Marvel Comics here!</h4>
+            <h2>The #1 Marvel Comic Bookstore</h2>
+          </div>
+        </div>
+        <div class="banner-item-01">
+          <div class="text-content">
+            <h4>Find your favourite book here!</h4>
+            <h2>The Best Bookstore In Town</h2>
           </div>
         </div>
         <div class="banner-item-03">
@@ -33,15 +33,15 @@
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Featured Products</h2>
+              <h2>Featured Book</h2>
               <a href="products.html">view more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-4">
             <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+              <a href="product-details.html"><img src="assets/images/featured-book-1.jpg" alt=""></a>
               <div class="down-content">
-                <a href="product-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <a href="product-details.html"><h4>The Amazing Spider-Man #1</h4></a>
                 <h6><small><del>$999.00 </del></small> $779.00</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta voluptas quia dolor fuga odit.</p>
               </div>
@@ -50,9 +50,9 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+              <a href="product-details.html"><img src="assets/images/featured-book-2.jpg" alt=""></a>
               <div class="down-content">
-                <a href="product-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <a href="product-details.html"><h4>Iron Man (2020) #14</h4></a>
                 <h6><small><del>$99.00</del></small>  $79.00</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non beatae soluta, placeat vitae cum maxime culpa itaque minima.</p>
               </div>
@@ -61,9 +61,9 @@
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+              <a href="product-details.html"><img src="assets/images/featured-book-3.jpg" alt=""></a>
               <div class="down-content">
-                <a href="product-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
+                <a href="product-details.html"><h4>Carnage #2</h4></a>
                 <h6><small><del>$1999.00</del></small>   $1779.00</h6>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt nisi quia aspernatur, harum facere delectus saepe enim?</p>
               </div>

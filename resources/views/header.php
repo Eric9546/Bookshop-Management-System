@@ -66,6 +66,7 @@
                 <li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item"><a href="about-us.html" class="filled-button">Log In</a></li>
             </ul>
           </div>
         </div>
