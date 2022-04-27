@@ -2,6 +2,41 @@
 	include('header.php');
 ?>
 
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+                </li> 
+
+                <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+                    
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="about-us.php">About Us</a>
+                      <a class="dropdown-item" href="blog.php">Blog</a>
+                      <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                      <a class="dropdown-item" href="terms.php">Terms</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>
+
+                <li class="nav-item active"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item"><a href="about-us.html" class="filled-button">Log In</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+</body>
+
+
     <!-- Page Content -->
     <div class="page-heading contact-heading header-text" style="background-image: url(assets/images/heading-4-1920x500.jpg);">
       <div class="container">

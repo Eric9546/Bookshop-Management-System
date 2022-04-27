@@ -2,6 +2,41 @@
 	include('header.php');
 ?>
 
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.php">Home
+                      <span class="sr-only">(current)</span>
+                    </a>
+                </li> 
+
+                <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
+                    
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="about-us.php">About Us</a>
+                      <a class="dropdown-item" href="blog.php">Blog</a>
+                      <a class="dropdown-item" href="testimonials.php">Testimonials</a>
+                      <a class="dropdown-item" href="terms.php">Terms</a>
+                    </div>
+                </li>
+                
+                <li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>
+
+                <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
+                <li class="nav-item"><a href="about-us.html" class="filled-button">Log In</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+</body>
+
+
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
@@ -42,8 +77,8 @@
               <a href="product-details.html"><img src="assets/images/featured-book-1.jpg" alt=""></a>
               <div class="down-content">
                 <a href="product-details.html"><h4>The Amazing Spider-Man #1</h4></a>
-                <h6><small><del>$999.00 </del></small> $779.00</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta voluptas quia dolor fuga odit.</p>
+                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
+                <p>WHAT DID SPIDER-MAN DO?! Ock’s on Spider-Man’s tail and the Master Planner has something truly terrible planned for when he gets his tentacles on Spidey. </p>
               </div>
             </div>
           </div>
@@ -53,8 +88,8 @@
               <a href="product-details.html"><img src="assets/images/featured-book-2.jpg" alt=""></a>
               <div class="down-content">
                 <a href="product-details.html"><h4>Iron Man (2020) #14</h4></a>
-                <h6><small><del>$99.00</del></small>  $79.00</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non beatae soluta, placeat vitae cum maxime culpa itaque minima.</p>
+                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
+                <p>BEHOLD THE BIRTH OF COSMIC IRON MAN! Iron Man has tasted a higher power and is forever changed. </p>
               </div>
             </div>
           </div>
@@ -64,41 +99,41 @@
               <a href="product-details.html"><img src="assets/images/featured-book-3.jpg" alt=""></a>
               <div class="down-content">
                 <a href="product-details.html"><h4>Carnage #2</h4></a>
-                <h6><small><del>$1999.00</del></small>   $1779.00</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt nisi quia aspernatur, harum facere delectus saepe enim?</p>
+                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
+                <p>CARNAGE and CLETUS KASADY, Sharing a bond unique even among symbiotes and their hosts, the two were the most notorious and prolific serial killers in the Marvel Universe.</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-4-370x270.jpg" alt=""></a>
+              <a href="product-details.html"><img src="assets/images/featured-book-4.jpg" alt=""></a>
               <div class="down-content">
-                <a href="product-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-                <h6><small><del>$999.00 </del></small> $779.00</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta voluptas quia dolor fuga odit.</p>
+                <a href="product-details.html"><h4>Ms. Marvel: Beyond The Limit #5</h4></a>
+                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
+                <p>Ms. Marvel and Qarin face off in this epic finale! If Ms. Marvel can’t stop her, with some help from Bruno and Nadia Van Dyne, is this the end of Ms. Marvel – for good?</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-5-370x270.jpg" alt=""></a>
+              <a href="product-details.html"><img src="assets/images/featured-book-5.jpg" alt=""></a>
               <div class="down-content">
-                <a href="product-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-                <h6><small><del>$999.00 </del></small> $779.00</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta voluptas quia dolor fuga odit.</p>
+                <a href="product-details.html"><h4>Hulk Smash Avengers (2011) #1</h4></a>
+                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
+                <p>One of the strongest heroes in the Marvel U faces off against the AVENGERS in a five-part punch-fest!</p>
               </div>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-6-370x270.jpg" alt=""></a>
+              <a href="product-details.html"><img src="assets/images/featured-book-6.jpg" alt=""></a>
               <div class="down-content">
-                <a href="product-details.html"><h4>Lorem ipsum dolor sit amet.</h4></a>
-                <h6><small><del>$999.00 </del></small> $779.00</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta voluptas quia dolor fuga odit.</p>
+                <a href="product-details.html"><h4>Avengers Vs. X-Men #9</h4></a>
+                <h6><small><del>RM39.99 </del></small> RM30.00</h6>
+                <p>Their numbers dwindling, the Avengers stage a daring raid on the X-Men's prison to rescue their captive members-and you won't believe where it is!</p>
               </div>
             </div>
           </div>

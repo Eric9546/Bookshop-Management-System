@@ -28,3 +28,12 @@ Route::get('/index.php', function () {
 Route::get('/checkout.php', function () {
     return view('checkout');
 });
+
+Route::get('/products.php', function () {
+    return view('products');
+});
+
+Route::get('/contact.php', function () {
+    return view('contact');
+});
+
