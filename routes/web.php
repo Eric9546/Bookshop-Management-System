@@ -36,4 +36,3 @@ Route::get('/products.php', function () {
 Route::get('/contact.php', function () {
     return view('contact');
 });
-
