@@ -37,6 +37,10 @@ Route::get('/contact.php', function () {
     return view('contact');
 });
 
-Route::get('/dbtest.php', function () {
-    return view('dbtest');
+Route::get('/login.php', function () {
+    return view('login');
+});
+
+Route::get('/register.php', function () {
+    return view('register');
 });

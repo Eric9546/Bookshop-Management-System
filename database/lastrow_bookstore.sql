@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2022 at 09:00 AM
+-- Generation Time: May 03, 2022 at 09:52 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.5
 
@@ -24,41 +24,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `test`
+-- Table structure for table `registration`
 --
 
-CREATE TABLE `test` (
-  `no` int(11) NOT NULL,
-  `first` varchar(255) NOT NULL
+CREATE TABLE `registration` (
+  `id` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `test`
+-- Dumping data for table `registration`
 --
 
-INSERT INTO `test` (`no`, `first`) VALUES
-(1, 'boo'),
-(2, 'boo');
+INSERT INTO `registration` (`id`, `password`, `name`, `address`, `phone`, `email`) VALUES
+('test', 'test', 'test', 'ss', '0123456789', 'sdsd@ss');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `test`
+-- Indexes for table `registration`
 --
-ALTER TABLE `test`
-  ADD PRIMARY KEY (`no`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `test`
---
-ALTER TABLE `test`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `registration`
+  ADD PRIMARY KEY (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

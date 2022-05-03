@@ -1,5 +1,6 @@
 <?php
 	include('header.php');
+    session_start ();
 ?>
 
 
@@ -27,7 +28,24 @@
                 <li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>
 
                 <li class="nav-item"><a class="nav-link" href="contact.php">Contact Us</a></li>
-                <li class="nav-item"><a href="about_us.php" class="filled-button">Log In</a></li>
+                <?php
+
+                    if (!isset ($_SESSION ['id']))
+                    {
+              
+                        echo '<li class="nav-item"><a href="login.php" class="filled-button">Log In</a></li>';
+              
+                    }
+
+                    else 
+                    {
+                   
+                        echo '<li class="nav-item"><a href="logout.php" class="filled-button">Logout</a></li>';
+                
+                    }
+              
+                  ?>
+             
             </ul>
           </div>
         </div>
