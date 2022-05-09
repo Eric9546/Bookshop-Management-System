@@ -29,7 +29,7 @@
 
     }
 
-    else 
+    else
     {
 
          // Establishing connection to database //
@@ -37,8 +37,8 @@
 
         mysqli_select_db ($connection, 'lastrow_bookstore');
 
-        // Making the query to authenticate the user login // 
-        $query = "select * from customer where id = '$id' && password = '$password'";
+        // Making the query to authenticate the user login //
+        $query = "select * from admin where id = '$id' && password = '$password'";
 
         $result = mysqli_query ($connection, $query);
 
@@ -50,12 +50,12 @@
             $row = $result->fetch_row();
             $value = $row[0];
             $_SESSION ['id'] = $value;
-            $_SESSION ['access'] = "Customer";
+            $_SESSION ['access'] = "Admin";
             header ("Location: index.php");
-        
-        } 
 
-        else 
+        }
+
+        else
         {
 
             alert ("Error Account Details Does Not Exist!");
@@ -66,6 +66,6 @@
 
     }
 
-   
+
 
 ?>

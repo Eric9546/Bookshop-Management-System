@@ -87,7 +87,7 @@
         else 
         {
 
-            $register = "insert into registration (id, password, name, address, phone, email) values ('$id', '$password', '$name', '$address', '$phone', '$email')";
+            $register = "insert into customer (id, password, name, address, phone, email) values ('$id', '$password', '$name', '$address', '$phone', '$email')";
             mysqli_query ($connection, $register);
             header ("Location: login.php");
 

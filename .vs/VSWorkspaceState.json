@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public"
+    "\\public",
+    "\\resources",
+    "\\resources\\views"
   ],
-  "SelectedNode": "\\public\\login_execute.php",
+  "SelectedNode": "\\resources\\views\\login.php",
   "PreviewInSolutionExplorer": false
 }

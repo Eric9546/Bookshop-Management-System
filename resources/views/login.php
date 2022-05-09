@@ -65,7 +65,7 @@
                 <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="id" type="text" class="form-control" id="id" placeholder="ID" required>
+                      <input name="id" type="text" class="form-control" id="id" placeholder="Customer ID" required>
                     </fieldset>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
@@ -77,8 +77,28 @@
                     <fieldset>
                       <button type="submit" id="form-submit" class="filled-button">Login</button>
                     </fieldset>
+                  </div>                
+                </div>
+              </form>
+             <form id="contact" action="login_admin_execute.php" method="post">
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                        <br />
+                      <input name="id" type="text" class="form-control" id="id" placeholder="Admin ID" required>
+                    </fieldset>
                   </div>
+                  <div class="col-lg-12 col-md-12 col-sm-12">
+                    <fieldset>
+                      <input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
+                    </fieldset>
+                  </div>          
                   <div class="col-lg-12">
+                    <fieldset>                        
+                      <button type="submit" id="form-submit" class="filled-button">Login As Admin</button>
+                    </fieldset>
+                  </div>
+                   <div class="col-lg-12">
                     <fieldset>
                         <br /><br />
                       <h6>Not A Member Yet? Click <a href="register.php">Here</a> To Register</h6>
