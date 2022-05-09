@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2022 at 09:52 AM
+-- Generation Time: May 09, 2022 at 05:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.5
 
@@ -24,10 +24,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `registration`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `registration` (
+CREATE TABLE `admin` (
+  `id` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `password`, `name`) VALUES
+('admin', 'admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
   `id` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
@@ -37,10 +56,11 @@ CREATE TABLE `registration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `registration`
+-- Dumping data for table `customer`
 --
 
-INSERT INTO `registration` (`id`, `password`, `name`, `address`, `phone`, `email`) VALUES
+INSERT INTO `customer` (`id`, `password`, `name`, `address`, `phone`, `email`) VALUES
+('ss', 'ss', 'ss', 'ss', '0123456789', 'sdsd@ss'),
 ('test', 'test', 'test', 'ss', '0123456789', 'sdsd@ss');
 
 --
@@ -48,9 +68,15 @@ INSERT INTO `registration` (`id`, `password`, `name`, `address`, `phone`, `email
 --
 
 --
--- Indexes for table `registration`
+-- Indexes for table `admin`
 --
-ALTER TABLE `registration`
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
 COMMIT;
 
