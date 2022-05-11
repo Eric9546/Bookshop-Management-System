@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2022 at 05:44 PM
+-- Generation Time: May 11, 2022 at 03:56 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.5
 
@@ -63,6 +63,24 @@ INSERT INTO `customer` (`id`, `password`, `name`, `address`, `phone`, `email`) V
 ('ss', 'ss', 'ss', 'ss', '0123456789', 'sdsd@ss'),
 ('test', 'test', 'test', 'ss', '0123456789', 'sdsd@ss');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stock`
+--
+
+CREATE TABLE `stock` (
+  `isbn` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `publishDate` varchar(255) NOT NULL,
+  `bookDesc` varchar(255) NOT NULL,
+  `picture` varchar(255) NOT NULL,
+  `tradePrice` double NOT NULL,
+  `retailPrice` double NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -78,6 +96,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `stock`
+--
+ALTER TABLE `stock`
+  ADD PRIMARY KEY (`isbn`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
