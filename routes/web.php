@@ -44,3 +44,11 @@ Route::get('/login.php', function () {
 Route::get('/register.php', function () {
     return view('register');
 });
+
+Route::get('/check-stock.php', function () {
+    return view('check-stock');
+});
+
+Route::get('/add-new-books.php', function () {
+    return view('add-new-books');
+});

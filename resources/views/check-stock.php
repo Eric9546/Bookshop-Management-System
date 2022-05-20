@@ -3,7 +3,6 @@
     session_start ();
 ?>
 
-
 <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -12,7 +11,7 @@
                     </a>
                 </li> 
 
-                <li class="nav-item active"><a class="nav-link" href="products.php">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
@@ -38,7 +37,7 @@
                         }
                         else if($_SESSION['access'] == "Admin")
                         {
-                          echo '<li class="nav-item"><a class="nav-link" href="check-stock.php">Check Stock</a></li>';
+                          echo '<li class="nav-item active"><a class="nav-link" href="check-stock.php">Check Stock</a></li>';
                         }
                       }
                 ?>
@@ -68,139 +67,105 @@
 
 </body>
 
-
     <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor sit amet</h4>
-              <h2>Product Details</h2>
+              <h2>Check Stock</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="products">
+    <div class="products call-to-action">
       <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-xs-12">
-            <div>
-              <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid wc-image">
-            </div>
-            <br>
-            <div class="row">
-              <div class="col-sm-4 col-xs-6">
-                <div>
-                  <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-xs-6">
-                <div>
-                  <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-xs-6">
-                <div>
-                  <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-            </div>
-          </div>
+        
+     <?php
 
-          <div class="col-md-8 col-xs-12">
-            <form action="#" method="post" class="form">
-              <h2>Lorem ipsum dolor sit amet.</h2>
+     echo" <div class='clearfix'>";
+     echo" <a href='add-new-books.php'><button type='button' class='filled-button pull-left'>Add Books</button></a>";
+     echo" <a href='add-new-books.php'><button type='submit' class='filled-button pull-right'>New Books</button></a>";
+     echo" </div>";
+     ?>
 
-              <br>
+        <div class="inner-content">
+          <div class="contact-form">
+              <form action="#">
+                   <div class="row">
 
-              <p class="lead">
-                <small><del> $999.00</del></small><strong class="text-primary">$779.00</strong>
-              </p>
+     <!--Table-->
+                   <table padding='15' width='100%' border ='1'>
+            <tr>
+                <th style='width:23%'><h4><strong>Book Name</strong></h3></th>
+                <th style='width:23%'><h4><strong>Author</strong></h3></th>
+                <th style='width:12%'><h4><strong>Trade Price</strong></h3></th>
+                <th style='width:12%'><h4><strong>Retail Price</strong></h3></th>
+                <th style='width:10%'><h4><strong>Quantity</strong></h3></th>
+                <th style='width:10%'><h4><strong>Edit</strong></h3></th>
+                <th style='width:10%'><h4><strong>Delete</strong></h3></th>
+            </tr>
 
-              <br>
+        <?php
+          // Establishing connection to database //
+          $connection = mysqli_connect ('localhost', 'root', '');
+		
+          mysqli_select_db ($connection, 'lastrow_bookstore');
 
-              <p class="lead">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ratione molestias maxime odio. Provident ratione vero, corrupti, optio laborum aut!
-              </p>
+          $query = "SELECT * FROM stock";
 
-              <br> 
+          $result = mysqli_query ($connection, $query);
 
-              <div class="row">
-                <div class="col-sm-4">
-                  <label class="control-label">Extra 1</label>
-                  <div class="form-group">
-                    <select class="form-control">
-                      <option value="0">18 gears</option>
-                      <option value="1">21 gears</option>
-                      <option value="2">27 gears</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-8">
-                  <label class="control-label">Quantity</label>
+          while ($rows = $result->fetch_assoc())
+          {
+               echo "        <tr> ";
+               echo "            <td style='width:23%'><h7><b>";
+               echo              $rows['bookName'];
+               echo "            </b></h7></td>";
+               echo "            <td style='width:23%'><h7><b>";
+               echo              $rows['author'];
+               echo "            </b></h7></td>";
+               echo "            <th style='width:12%'><h7>RM ";
+               echo              $rows['tradePrice'];
+               echo "            </h7></th>";
+               echo "            <th style='width:12%'><h7>RM ";
+               echo              $rows['retailPrice'];
+               echo "            </h7></th>";
+               echo "            <th style='width:10%' style='text-align:center;'><h7>";
+               echo              $rows['quantity'];
+               echo "            </h7></th>";
+   
+               echo "            <th style='width:10%' style='text-align:center;'>";
+               echo "             <form action='deleteJob.php' method='POST'>";
+               echo "              <input type ='hidden' name ='jobID' value ='";
+                  echo                $rows['quantity'];
+                  echo "              '/>";
+               echo "              <input type ='submit' value ='Edit' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+               echo "              </form>";       
+               echo "            </th>";
 
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="1">
-                      </div>
-                    </div>
+               echo "            <th style='width:10%' style='text-align:right;'>";
+               echo "             <form action='deleteJob.php' method='POST'>";
+               echo "              <input type ='hidden' name ='jobID' value ='";
+                  echo                $rows['quantity'];
+                  echo "              '/>";
+               echo "              <input type ='submit' value ='Delete' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+               echo "              </form>";       
+               echo "            </th>";
+   
+               
+               echo "        </tr>";
+                  
+          }
+            ?>
 
-                    <div class="col-sm-6">
-                      <a href="#" class="btn btn-primary btn-block">Add to Cart</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+          </table>
+                   </div>
+              </form>
 
-    <div class="latest-products">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Similar Products</h2>
-              <a href="products.html">view more <i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Omega bicycle</h4></a>
-                <h6><small><del>$999.00 </del></small> $779.00</h6>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Nike Revolution 5 Shoes</h4></a>
-                <h6><small><del>$99.00</del></small>  $79.00</h6>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Treadmill Orion Sprint</h4></a>
-                <h6><small><del>$1999.00</del></small>   $1779.00</h6>
-              </div>
-            </div>
+          <!--Table End-->              
           </div>
         </div>
       </div>
