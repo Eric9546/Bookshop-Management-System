@@ -85,122 +85,89 @@
 
 </body>
 
-
     <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4><i class="fa fa-user"></i>John Doe  &nbsp;&nbsp;&nbsp;&nbsp;  <i class="fa fa-calendar"></i> 12/06/2020 10:30   &nbsp;&nbsp;&nbsp;&nbsp; <i class="fa fa-eye"></i> 114</h4>
-              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing</h2>
+              <h2>Manage Featured Books</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="products">
+    <div class="products call-to-action">
       <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-              <div class="section-heading">
-                <h2>Lorem ipsum dolor sit amet, consectetur.</h2>
-              </div>
-            </div>
 
-            <div class="col-md-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, sed. Ex, id autem cum assumenda, quisquam cupiditate amet dolorem atque ipsam pariatur sequi voluptatem est nesciunt eum, aspernatur, tenetur rem. <br>
+        <div class="inner-content">
+          <div class="contact-form">
+              <form action="#">
+                   <div class="row">
 
-                <br>
+     <!--Table-->
+                   <table padding='15' width='100%' border ='1'>
+            <tr>
+                <th style='width:10%'><h4><strong>No</strong></h3></th>
+                <th style='width:20%'><h4><strong>ISBN</strong></h3></th>
+                <th style='width:60%'><h4><strong>Book Name</strong></h3></th>
+                <th style='width:10%'><h4><strong>Edit</strong></h3></th>
+            </tr>
 
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, consequatur, magnam. Dolorum vitae a vel quisquam. Fuga quia suscipit id veritatis sint earum impedit corporis quidem eum consectetur ipsam ex sequi ad, distinctio enim tenetur eveniet eligendi. Laborum, sapiente, magnam.</p>
+        <?php
+          // Establishing connection to database //
+          $connection = mysqli_connect ('localhost', 'root', '');
+		
+          mysqli_select_db ($connection, 'lastrow_bookstore');
 
-                <br>
+          $query = "SELECT * FROM featured_books";
 
-                <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, modi.</h5>
+          $result = mysqli_query ($connection, $query);
 
-                <br>
+          while ($rows = $result->fetch_assoc())
+          {
+               echo "        <tr> ";
+               echo "            <th style='width:10%'><h7><b>";
+               echo              $rows['bookNo'];
+               echo "            </b></h7></td>";
+               echo "            <th style='width:20%'><h7><b>";
+               echo              $rows['isbn'];
+               echo "            </b></h7></td>";
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam officia in adipisci. Corporis rem beatae cupiditate neque consequuntur necessitatibus expedita laudantium temporibus quam ex quidem, aut non blanditiis soluta deserunt dolores mollitia repudiandae voluptatibus perspiciatis dolor quos distinctio! Atque, magnam. <br>
+               $isbn_featured = $rows['isbn'];
 
-                <br>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt dolore ducimus, ad itaque reprehenderit repellat dignissimos, qui velit dolores voluptas.</p>
-            </div>
+               $query_2 = "SELECT * FROM stock WHERE isbn = '$isbn_featured'";
 
-            <div class="col-md-4">
-              <div class="left-content">
-                <h4>Lorem ipsum dolor sit amet.</h4>
+               $result_2 = mysqli_query ($connection, $query_2);
 
-                <br>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Sed voluptate nihil eumester consectetur similiqu consectetur.<br><br>Lorem ipsum dolor sit amet, consectetur adipisic elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti.</p>
-                
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, minus?</p>
-              </div>
-            </div>
-        </div>
+               while ($rows_2 = $result_2->fetch_assoc())
+               {
+                echo "            <th style='width:60%'><h7><b>";
+                echo              $rows_2['bookName'];
+                echo "            </h7></th>";
+               }
 
-        <br>
-        
-        <div>
-          <img src="assets/images/blog-image-fullscren-1-1920x700.jpg" class="img-fluid" alt="">
-        </div>
-      </div>
-    </div>
+               echo "            <th style='width:10%' style='text-align:center;'>";
+               echo "             <form action='featured-books-edit.php' method='get'>";
+               echo "              <input type ='hidden' name ='bookNo' value ='";
+               echo                $rows['bookNo'];
+               echo "              '/>";
+               echo "              <input type ='submit' value ='Edit' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+               echo "              </form>";       
+               echo "            </th>";   
+               
+               echo "        </tr>";
+                  
+          }
+            ?>
 
-    <div class="send-message">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <h2>Leave a Comment</h2>
-            </div>
-          </div>
-          <div class="col-md-8">
-            <div class="contact-form">
-              <form id="contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Submit</button>
-                    </fieldset>
-                  </div>
-                </div>
+          </table>
+                   </div>
               </form>
-            </div>
+
+          <!--Table End-->              
           </div>
-
-          <div class="col-md-4">
-              <div class="left-content">
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisic elit. Sed voluptate nihil eumester consectetur similiqu consectetur. Lorem ipsum dolor sit amet, consectetur adipisic elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti.</p>
-
-                <br> 
-
-                <ul class="social-icons">
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                </ul>
-              </div>
-            </div>
         </div>
       </div>
     </div>

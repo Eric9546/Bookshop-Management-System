@@ -6,39 +6,55 @@
 
 <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="index.php">Home
                       <span class="sr-only">(current)</span>
                     </a>
                 </li> 
 
                 <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-                    
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="about-us.php">About Us</a>
-                      <a class="dropdown-item" href="blog.php">Blog</a>
-                      <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                      <a class="dropdown-item" href="terms.php">Terms</a>
-                    </div>
-                </li>
                 
                 <?php
                       if (!isset ($_SESSION ['id']))
                       {
-                
+                        echo "<li class='nav-item dropdown'>";
+                        echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>More</a>";
+                        
+                        echo "<div class='dropdown-menu'>";
+                        echo "  <a class='dropdown-item' href='about-us.php'>About Us</a>";
+                        echo "  <a class='dropdown-item' href='blog.php'>Blog</a>";
+                        echo "  <a class='dropdown-item' href='testimonials.php'>Testimonials</a>";
+                        echo "  <a class='dropdown-item' href='terms.php'>Terms</a>";
+                        echo "</div>";
+                        echo "</li>";
                       }
                       else
                       {
                         if($_SESSION['access'] == "Customer")
                         {
+                          echo "<li class='nav-item dropdown'>";
+                          echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>More</a>";
+                          
+                          echo "<div class='dropdown-menu'>";
+                          echo "  <a class='dropdown-item' href='about-us.php'>About Us</a>";
+                          echo "  <a class='dropdown-item' href='blog.php'>Blog</a>";
+                          echo "  <a class='dropdown-item' href='testimonials.php'>Testimonials</a>";
+                          echo "  <a class='dropdown-item' href='terms.php'>Terms</a>";
+                          echo "</div>";
+                          echo "</li>";
+
                           echo '<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>';
                         }
                         else if($_SESSION['access'] == "Admin")
                         {
-                          echo '<li class="nav-item"><a class="nav-link" href="check-stock.php">Check Stock</a></li>';
+                          echo "<li class='nav-item dropdown'>";
+                          echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Manage</a>";
+                          
+                          echo "<div class='dropdown-menu'>";
+                          echo "  <a class='dropdown-item' href='check-stock.php'>Check Stock</a>";
+                          echo "  <a class='dropdown-item' href='featured-books-manage.php'>Manage Featured Books</a>";
+                          echo "</div>";
+                          echo "</li>";
                         }
                       }
                 ?>
@@ -60,6 +76,7 @@
                 
                     }
                   ?>
+             
             </ul>
           </div>
         </div>

@@ -52,3 +52,11 @@ Route::get('/check-stock.php', function () {
 Route::get('/add-new-books.php', function () {
     return view('add-new-books');
 });
+
+Route::get('/featured-books-manage.php', function () {
+    return view('featured-books-manage');
+});
+
+Route::get('/featured-books-edit.php', function () {
+    return view('featured-books-edit');
+});

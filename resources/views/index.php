@@ -13,32 +13,48 @@
                 </li> 
 
                 <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">More</a>
-                    
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="about-us.php">About Us</a>
-                      <a class="dropdown-item" href="blog.php">Blog</a>
-                      <a class="dropdown-item" href="testimonials.php">Testimonials</a>
-                      <a class="dropdown-item" href="terms.php">Terms</a>
-                    </div>
-                </li>
                 
                 <?php
                       if (!isset ($_SESSION ['id']))
                       {
-                
+                        echo "<li class='nav-item dropdown'>";
+                        echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>More</a>";
+                        
+                        echo "<div class='dropdown-menu'>";
+                        echo "  <a class='dropdown-item' href='about-us.php'>About Us</a>";
+                        echo "  <a class='dropdown-item' href='blog.php'>Blog</a>";
+                        echo "  <a class='dropdown-item' href='testimonials.php'>Testimonials</a>";
+                        echo "  <a class='dropdown-item' href='terms.php'>Terms</a>";
+                        echo "</div>";
+                        echo "</li>";
                       }
                       else
                       {
                         if($_SESSION['access'] == "Customer")
                         {
+                          echo "<li class='nav-item dropdown'>";
+                          echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>More</a>";
+                          
+                          echo "<div class='dropdown-menu'>";
+                          echo "  <a class='dropdown-item' href='about-us.php'>About Us</a>";
+                          echo "  <a class='dropdown-item' href='blog.php'>Blog</a>";
+                          echo "  <a class='dropdown-item' href='testimonials.php'>Testimonials</a>";
+                          echo "  <a class='dropdown-item' href='terms.php'>Terms</a>";
+                          echo "</div>";
+                          echo "</li>";
+
                           echo '<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>';
                         }
                         else if($_SESSION['access'] == "Admin")
                         {
-                          echo '<li class="nav-item"><a class="nav-link" href="check-stock.php">Check Stock</a></li>';
+                          echo "<li class='nav-item dropdown'>";
+                          echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Manage</a>";
+                          
+                          echo "<div class='dropdown-menu'>";
+                          echo "  <a class='dropdown-item' href='check-stock.php'>Check Stock</a>";
+                          echo "  <a class='dropdown-item' href='featured-books-manage.php'>Manage Featured Books</a>";
+                          echo "</div>";
+                          echo "</li>";
                         }
                       }
                 ?>
@@ -105,71 +121,49 @@
               <a href="products.html">view more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/featured-book-1.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>The Amazing Spider-Man #1</h4></a>
-                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
-                <p>WHAT DID SPIDER-MAN DO?! Ock’s on Spider-Man’s tail and the Master Planner has something truly terrible planned for when he gets his tentacles on Spidey. </p>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/featured-book-2.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Iron Man (2020) #14</h4></a>
-                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
-                <p>BEHOLD THE BIRTH OF COSMIC IRON MAN! Iron Man has tasted a higher power and is forever changed. </p>
-              </div>
-            </div>
-          </div>
+          <?php
 
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/featured-book-3.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Carnage #2</h4></a>
-                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
-                <p>CARNAGE and CLETUS KASADY, Sharing a bond unique even among symbiotes and their hosts, the two were the most notorious and prolific serial killers in the Marvel Universe.</p>
-              </div>
-            </div>
-          </div>
+          $connection = mysqli_connect ('localhost', 'root', '');
+		
+          mysqli_select_db ($connection, 'lastrow_bookstore');
 
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/featured-book-4.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Ms. Marvel: Beyond The Limit #5</h4></a>
-                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
-                <p>Ms. Marvel and Qarin face off in this epic finale! If Ms. Marvel can’t stop her, with some help from Bruno and Nadia Van Dyne, is this the end of Ms. Marvel – for good?</p>
-              </div>
-            </div>
-          </div>
+          $query = "SELECT * FROM featured_books";
 
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/featured-book-5.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Hulk Smash Avengers (2011) #1</h4></a>
-                <h6><small><del>RM29.99 </del></small> RM25.00</h6>
-                <p>One of the strongest heroes in the Marvel U faces off against the AVENGERS in a five-part punch-fest!</p>
-              </div>
-            </div>
-          </div>
+          $result = mysqli_query ($connection, $query);
 
-          <div class="col-md-4">
-            <div class="product-item">
-              <a href="product-details.html"><img src="assets/images/featured-book-6.jpg" alt=""></a>
-              <div class="down-content">
-                <a href="product-details.html"><h4>Avengers Vs. X-Men #9</h4></a>
-                <h6><small><del>RM39.99 </del></small> RM30.00</h6>
-                <p>Their numbers dwindling, the Avengers stage a daring raid on the X-Men's prison to rescue their captive members-and you won't believe where it is!</p>
-              </div>
-            </div>
-          </div>
+          while ($rows = $result->fetch_assoc())
+          {
+               $isbn_featured = $rows['isbn'];
+
+               $query_2 = "SELECT * FROM stock WHERE isbn = '$isbn_featured'";
+
+               $result_2 = mysqli_query ($connection, $query_2);
+
+               while ($rows_2 = $result_2->fetch_assoc())
+               {
+                echo "<div class='col-md-4'>";
+                echo "  <div class='product-item'>";
+                echo "    <a href='product-details.html'><img src='assets/images/bookCovers/";
+                echo $rows_2['pictureUrl'];
+                echo "' alt=''></a>";
+                echo "    <div class='down-content'>";
+                echo "      <a href='product-details.html'><h4>";
+                echo $rows_2['bookName'];
+                echo "</h4></a>";
+                echo "<h6>";
+                echo $rows_2['retailPrice'];
+                echo "</h6>";
+                echo "      <p>";
+                echo $rows_2['bookDesc'];
+                echo "</p>";
+                echo "    </div>";
+                echo "  </div>";
+                echo "</div>";
+               }
+          }
+          ?>
+
         </div>
       </div>
     </div>
