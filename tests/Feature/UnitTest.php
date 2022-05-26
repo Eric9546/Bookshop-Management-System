@@ -12,6 +12,7 @@ class UnitTest extends TestCase
      *
      * @return void
      */
+
     public function test_the_application_returns_a_successful_response()
     {
         $response = $this->get('/');
@@ -23,28 +24,28 @@ class UnitTest extends TestCase
     {
         $response = $this->get('/index.php');
 
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 
     public function test_visitor_view_desc()
     {
         $response = $this->get('/index.php');
 
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 
     public function test_visitor_search()
     {
         $response = $this->get('/index.php');
 
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 
     public function test_visitor_view_price()
     {
         $response = $this->get('/index.php');
 
-        $response->assertStatus(500);
+        $response->assertStatus(200);
     }
 
 }
