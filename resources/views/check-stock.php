@@ -159,18 +159,18 @@
                echo "            </h7></th>";
    
                echo "            <th style='width:10%' style='text-align:center;'>";
-               echo "             <form action='deleteJob.php' method='POST'>";
+               echo "             <form action='edit_books_execute.php' method='POST'>";
                echo "              <input type ='hidden' name ='jobID' value ='";
-                  echo                $rows['quantity'];
+                  echo                $rows['isbn'];
                   echo "              '/>";
                echo "              <input type ='submit' value ='Edit' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
                echo "              </form>";       
                echo "            </th>";
 
                echo "            <th style='width:10%' style='text-align:right;'>";
-               echo "             <form action='deleteJob.php' method='POST'>";
-               echo "              <input type ='hidden' name ='jobID' value ='";
-                  echo                $rows['quantity'];
+               echo "             <form action='delete_books_execute.php' method='POST'>";
+               echo "              <input type ='hidden' name ='isbn' value ='";
+                  echo                $rows['isbn'];
                   echo "              '/>";
                echo "              <input type ='submit' value ='Delete' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
                echo "              </form>";       
