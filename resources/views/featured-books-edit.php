@@ -15,7 +15,7 @@
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.php">Books</a></li>
                 
                 <?php
                       if (!isset ($_SESSION ['id']))
