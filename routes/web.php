@@ -60,3 +60,7 @@ Route::get('/featured-books-manage.php', function () {
 Route::get('/featured-books-edit.php', function () {
     return view('featured-books-edit');
 });
+
+Route::get('/customer-payment-history.php', function () {
+    return view('customer-payment-history');
+});

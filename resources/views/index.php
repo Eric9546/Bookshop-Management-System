@@ -56,6 +56,7 @@
                           echo "<div class='dropdown-menu'>";
                           echo "  <a class='dropdown-item' href='check-stock.php'>Check Stock</a>";
                           echo "  <a class='dropdown-item' href='featured-books-manage.php'>Manage Featured Books</a>";
+                          echo "  <a class='dropdown-item' href='customer-payment-history.php'>View Customer Payment History</a>";
                           echo "</div>";
                           echo "</li>";
                         }
