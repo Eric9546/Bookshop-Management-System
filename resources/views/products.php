@@ -104,6 +104,28 @@
     </div>
 
     <div class="products">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="contact-form">
+            <h5>Search</h5>
+              <form id="contact" action="search_book_execute.php" method="post">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <fieldset>
+                      <input name="id" type="text" class="form-control" id="id" placeholder="Book Name" required>
+                    </fieldset>
+                  </div>
+                  <div class="col-lg-4">
+                    <fieldset>
+                      <button type="submit" id="form-submit" class="filled-button">Search</button>
+                    </fieldset>
+                  </div>                    
+                </div>
+              </form>
+            </div>
+
       <div class="container">
         <div class="row">
 
