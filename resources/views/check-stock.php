@@ -120,13 +120,14 @@
      <!--Table-->
                    <table padding='15' width='100%' border ='1'>
             <tr>
+                <th style='width:11%'><h4><strong>ISBN</strong></h3></th>
                 <th style='width:23%'><h4><strong>Book Name</strong></h3></th>
-                <th style='width:23%'><h4><strong>Author</strong></h3></th>
-                <th style='width:12%'><h4><strong>Trade Price</strong></h3></th>
-                <th style='width:12%'><h4><strong>Retail Price</strong></h3></th>
-                <th style='width:10%'><h4><strong>Quantity</strong></h3></th>
-                <th style='width:10%'><h4><strong>Edit</strong></h3></th>
-                <th style='width:10%'><h4><strong>Delete</strong></h3></th>
+                <th style='width:21%'><h4><strong>Author</strong></h3></th>
+                <th style='width:10%'><h4><strong>Trade Price</strong></h3></th>
+                <th style='width:10%'><h4><strong>Retail Price</strong></h3></th>
+                <th style='width:8%'><h4><strong>Quantity</strong></h3></th>
+                <th style='width:8%'><h4><strong>Edit</strong></h3></th>
+                <th style='width:9%'><h4><strong>Delete</strong></h3></th>
             </tr>
 
         <?php
@@ -142,32 +143,35 @@
           while ($rows = $result->fetch_assoc())
           {
                echo "        <tr> ";
+               echo "            <th style='width:11%'><h7>";
+               echo              $rows['isbn'];
+               echo "            </h7></th>";
                echo "            <td style='width:23%'><h7><b>";
                echo              $rows['bookName'];
                echo "            </b></h7></td>";
-               echo "            <td style='width:23%'><h7><b>";
+               echo "            <td style='width:21%'><h7><b>";
                echo              $rows['author'];
                echo "            </b></h7></td>";
-               echo "            <th style='width:12%'><h7>RM ";
+               echo "            <th style='width:10%'><h7>RM ";
                echo              $rows['tradePrice'];
                echo "            </h7></th>";
-               echo "            <th style='width:12%'><h7>RM ";
+               echo "            <th style='width:10%'><h7>RM ";
                echo              $rows['retailPrice'];
                echo "            </h7></th>";
-               echo "            <th style='width:10%' style='text-align:center;'><h7>";
+               echo "            <th style='width:8%' style='text-align:center;'><h7>";
                echo              $rows['quantity'];
                echo "            </h7></th>";
    
-               echo "            <th style='width:10%' style='text-align:center;'>";
-               echo "             <form action='edit_books_execute.php' method='POST'>";
-               echo "              <input type ='hidden' name ='jobID' value ='";
+               echo "            <th style='width:8%' style='text-align:center;'>";
+               echo "             <form action='edit-book.php' method='get'>";
+               echo "              <input type ='hidden' name ='isbn' value ='";
                   echo                $rows['isbn'];
                   echo "              '/>";
                echo "              <input type ='submit' value ='Edit' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
                echo "              </form>";       
                echo "            </th>";
 
-               echo "            <th style='width:10%' style='text-align:right;'>";
+               echo "            <th style='width:9%' style='text-align:right;'>";
                echo "             <form action='delete_books_execute.php' method='POST'>";
                echo "              <input type ='hidden' name ='isbn' value ='";
                   echo                $rows['isbn'];

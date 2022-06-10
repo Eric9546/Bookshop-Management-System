@@ -12,13 +12,12 @@
 
     // Gathering user input //
     $isbn = $_POST ['isbn'];
+    $pictureUrl = $_POST ['pictureUrl'];
 
     // Validating the input //
     if (empty ($isbn))
     {
-
         alert ("Error Please Check Your ISBN!");
-
     }
     else 
     {
@@ -36,9 +35,7 @@
         }
         else 
         {
-
             alert ("Delete Book Failed!");
-
         }
 
         mysqli_close ($connection);

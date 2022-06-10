@@ -88,81 +88,111 @@
 
 </body>
 
-
     <!-- Page Content -->
     <div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-6-1920x500.jpg);">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Begin your Magical Discoveries</h4>
-              <h2>Books</h2>
+              <h2>Edit Books</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="products">
-
+    <div class="products call-to-action">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="contact-form">
-            <h5>Search</h5>
-              <form id="contact" action="search_book_execute.php" method="post">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <fieldset>
-                      <input name="id" type="text" class="form-control" id="id" placeholder="Book Name" required>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-4">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Search</button>
-                    </fieldset>
-                  </div>                    
-                </div>
+        <div class="inner-content">
+          <div class="contact-form">
+              <form action="edit_book_execute.php" method="post" enctype="multipart/form-data">
+
+              <?php
+                  $isbn = $_GET ['isbn'];
+
+                  $connection = mysqli_connect ('localhost', 'root', '');
+		
+                  mysqli_select_db ($connection, 'lastrow_bookstore');
+
+                  $query = "SELECT * FROM stock WHERE isbn ='$isbn'";
+
+                  $result = mysqli_query ($connection, $query);
+
+                  while ($rows = $result->fetch_assoc())
+                  {
+                    $isbn = $rows['isbn'];
+                    $bookName = $rows['bookName'];
+                    $author = $rows['author'];
+                    $publishDate = $rows['publishDate'];
+                    $bookDesc = $rows['bookDesc'];
+                    $tradePrice = $rows['tradePrice'];
+                    $retailPrice = $rows['retailPrice'];
+                    $quantity = $rows['quantity'];
+
+                    echo "<div class='row'>";
+                    echo "<div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "               <label class='control-label'>ISBN:</label>";
+                    echo "               <input type='text' name='isbn' id='isbn' class='form-control' value='$isbn' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "               <label class='control-label'>Book Name:</label>";
+                    echo "               <input type='text' name='bookName' id='bookName' class='form-control' value='$bookName' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "</div>";
+                    echo "<div class='row'>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "               <label class='control-label'>Author:</label>";
+                    echo "               <input type='text' name='author' id='author' class='form-control' value='$author' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "         <div class='form-group'>";
+                    echo "               <label class='control-label'>Publish Date:</label>";
+                    echo "               <input type='text' name='publishDate' id='publishDate' class='form-control' value='$publishDate' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "</div>";
+                    echo "<div class='row'>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "               <label class='control-label'>Book Description:</label>";
+                    echo "               <input type='text' name='bookDesc' id='bookDesc' class='form-control' value='$bookDesc' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "               <label class='control-label'>Trade Price:</label>";
+                    echo "               <input type='text' name='tradePrice' id='tradePrice' class='form-control' value='$tradePrice' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "</div>";
+                    echo "<div class='row'>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "              <label class='control-label'>Retail Price:</label>";
+                    echo "               <input type='text' name='retailPrice' id='retailPrice' class='form-control' value='$retailPrice' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "     <div class='col-sm-6 col-xs-12'>";
+                    echo "          <div class='form-group'>";
+                    echo "               <label class='control-label'>Quantity:</label>";
+                    echo "               <input type='text' name='quantity' id='quantity' class='form-control' value='$quantity' required>";
+                    echo "          </div>";
+                    echo "     </div>";
+                    echo "</div>";
+                  }
+                  ?>
+
+                   <div class="clearfix">
+                        <button type="submit" class="filled-button pull-right">UPDATE</button>
+                   </div>
               </form>
-            </div>
-
-      <div class="container">
-        <div class="row">
-
-
-<?php
-
-$connection = mysqli_connect ('localhost', 'root', '');
-
-mysqli_select_db ($connection, 'lastrow_bookstore');
-
-$query = "SELECT * FROM stock";
-
-$result = mysqli_query ($connection, $query);
-
-while ($rows = $result->fetch_assoc())
-{
-      echo "<div class='col-md-4'>";
-      echo "  <div class='product-item'>";
-      echo "    <a href='product-details.html'><img src='assets/images/bookCovers/";
-      echo $rows['pictureUrl'];
-      echo "' alt=''></a>";
-      echo "    <div class='down-content'>";
-      echo "      <a href='product-details.html'><h4>";
-      echo $rows['bookName'];
-      echo "</h4></a>";
-      echo "<h6>RM ";
-      echo $rows['retailPrice'];
-      echo "</h6>";
-      echo "      <p>";
-      echo $rows['bookDesc'];
-      echo "</p>";
-      echo "    </div>";
-      echo "  </div>";
-      echo "</div>";
-}
-?>
-
+          </div>
         </div>
       </div>
     </div>

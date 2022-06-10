@@ -64,3 +64,7 @@ Route::get('/featured-books-edit.php', function () {
 Route::get('/customer-payment-history.php', function () {
     return view('customer-payment-history');
 });
+
+Route::get('/edit-book.php', function () {
+    return view('edit-book');
+});
