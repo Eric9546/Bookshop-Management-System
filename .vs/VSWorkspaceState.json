@@ -6,7 +6,8 @@
     "\\resources\\views",
     "\\routes",
     "\\tests",
-    "\\tests\\Feature"
+    "\\tests\\Feature",
+    "\\tests\\Unit"
   ],
   "SelectedNode": "\\tests\\Feature\\FeatureTest.php",
   "PreviewInSolutionExplorer": false
