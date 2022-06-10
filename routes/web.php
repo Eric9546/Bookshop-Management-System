@@ -68,3 +68,7 @@ Route::get('/customer-payment-history.php', function () {
 Route::get('/edit-book.php', function () {
     return view('edit-book');
 });
+
+Route::get('/products_search.php', function () {
+    return view('products_search');
+});

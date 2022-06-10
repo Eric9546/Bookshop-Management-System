@@ -114,7 +114,7 @@
                 <div class="row">
                   <div class="col-lg-8">
                     <fieldset>
-                      <input name="bookName" type="text" class="form-control" name="bookName" placeholder="Book Name" required>
+                      <input name="bookName" type="text" class="form-control" id="bookName" placeholder="Book Name" required>
                     </fieldset>
                   </div>
                   <div class="col-lg-4">
@@ -136,31 +136,50 @@ $connection = mysqli_connect ('localhost', 'root', '');
 
 mysqli_select_db ($connection, 'lastrow_bookstore');
 
-$query = "SELECT * FROM stock";
+$bookName = $_GET ['bookName'];
 
-$result = mysqli_query ($connection, $query); 
+$query = "SELECT * FROM stock WHERE bookName ='$bookName'";
 
-while ($rows = $result->fetch_assoc())
+if($result = mysqli_query ($connection, $query))
 {
-      echo "<div class='col-md-4'>";
-      echo "  <div class='product-item'>";
-      echo "    <a href='product-details.html'><img src='assets/images/bookCovers/";
-      echo $rows['pictureUrl'];
-      echo "' alt=''></a>";
-      echo "    <div class='down-content'>";
-      echo "      <a href='product-details.html'><h4>";
-      echo $rows['bookName'];
-      echo "</h4></a>";
-      echo "<h6>RM ";
-      echo $rows['retailPrice'];
-      echo "</h6>";
-      echo "      <p>";
-      echo $rows['bookDesc'];
-      echo "</p>";
-      echo "    </div>";
-      echo "  </div>";
-      echo "</div>";
+  if($result->num_rows== 0)
+  {
+    echo "<div class='container'>";
+    echo "<div class='row'>";
+    echo "  <div class='col-md-12'>";
+    echo "    <div class='inner-content'>";
+    echo "      <h2>Item Not Found</h2>";
+    echo "    </div>";
+    echo "  </div>";
+    echo "</div>";
+    echo "</div>";
+  }
+  else
+  {
+    while ($rows = $result->fetch_assoc())
+    {
+          echo "<div class='col-md-4'>";
+          echo "  <div class='product-item'>";
+          echo "    <a href='product-details.html'><img src='assets/images/bookCovers/";
+          echo $rows['pictureUrl'];
+          echo "' alt=''></a>";
+          echo "    <div class='down-content'>";
+          echo "      <a href='product-details.html'><h4>";
+          echo $rows['bookName'];
+          echo "</h4></a>";
+          echo "<h6>RM ";
+          echo $rows['retailPrice'];
+          echo "</h6>";
+          echo "      <p>";
+          echo $rows['bookDesc'];
+          echo "</p>";
+          echo "    </div>";
+          echo "  </div>";
+          echo "</div>";
+    }
+  }
 }
+
 ?>
 
         </div>
