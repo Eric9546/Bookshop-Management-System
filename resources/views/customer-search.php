@@ -15,7 +15,7 @@
                     </a>
                 </li> 
 
-                <li class="nav-item"><a class="nav-link" href="products.php">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.php">Books</a></li>
                 
                 <?php
                       if (!isset ($_SESSION ['id']))
@@ -56,6 +56,7 @@
                           echo "<div class='dropdown-menu'>";
                           echo "  <a class='dropdown-item' href='check-stock.php'>Check Stock</a>";
                           echo "  <a class='dropdown-item' href='featured-books-manage.php'>Manage Featured Books</a>";
+                          echo "  <a class='dropdown-item' href='customer-payment-history.php'>View Customer Payment History</a>";
                           echo "</div>";
                           echo "</li>";
                         }
@@ -154,7 +155,7 @@
                 echo "      <a href='product-details.html'><h4>";
                 echo $rows_2['bookName'];
                 echo "</h4></a>";
-                echo "<h6>";
+                echo "<h6>RM ";
                 echo $rows_2['retailPrice'];
                 echo "</h6>";
                 echo "      <p>";
