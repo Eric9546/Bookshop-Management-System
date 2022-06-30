@@ -5,7 +5,7 @@ namespace Tests\Unit;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class Sprint2Test extends TestCase
+class Sprint2UnitTest extends TestCase
 {
     /**
      * A basic test example.
