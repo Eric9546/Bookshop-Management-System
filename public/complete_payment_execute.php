@@ -36,7 +36,7 @@
 
         mysqli_select_db ($connection, 'lastrow_bookstore');
 
-        $sql = "INSERT INTO payment (receiverName, phoneNumber, addressOne, addressTwo, city, state, postcode, paymentMethod, date)VALUES ('$receiverName', '$phoneNumber', '$addressOne', '$addressTwo', '$city', '$state', '$postcode', '$paymentMethod', '$date')";
+        $sql = "INSERT INTO payment (receiverName, phoneNumber, addressOne, addressTwo, city, state, postcode, paymentMethod, date, custId)VALUES ('$receiverName', '$phoneNumber', '$addressOne', '$addressTwo', '$city', '$state', '$postcode', '$paymentMethod', '$date', '$custId')";
 
         if($result = mysqli_query ($connection, $sql))
         {

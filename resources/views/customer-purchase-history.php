@@ -123,7 +123,7 @@
 
       $custId = $_SESSION ['id'];
 
-      $query = "SELECT * FROM payment";
+      $query = "SELECT * FROM payment WHERE custId ='$custId'";
 
       $result = mysqli_query ($connection, $query);
 
@@ -132,9 +132,6 @@
 
         $subTotal = 0;
 
-        echo "<h4> Customer ID: ";
-        echo $rows['custId'];
-        echo "</h4>";
         echo "<h4> Date: ";
         echo $rows['date'];
         echo "</h4>";
@@ -150,7 +147,7 @@
 
           $tempPaymentId = $rows['paymentId'];
 
-          $query2 = "SELECT * FROM checkout WHERE status = 'paymentMade' AND paymentId='$tempPaymentId'";
+          $query2 = "SELECT * FROM checkout WHERE custId ='$custId' AND status = 'paymentMade' AND paymentId='$tempPaymentId'";
 
           $result2 = mysqli_query ($connection, $query2);
 
@@ -191,12 +188,10 @@
           }
            
           echo "</table>";
-          echo "<h4>Grand-Total: RM ";
+          echo "<h4> Grand-Total: RM ";
           echo $subTotal;
           echo "</h4>";
           echo "</div>";
-          echo "<br>";
-          echo "<br>";
       }
             ?>
 
