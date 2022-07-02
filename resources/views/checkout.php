@@ -183,9 +183,9 @@
                echo "            </h7></th>";
 
                echo "            <th style='width:10%' style='text-align:right;'>";
-               echo "             <form action='delete_books_execute.php' method='POST'>";
-               echo "              <input type ='hidden' name ='isbn' value ='";
-               echo                     $rows['isbn'];
+               echo "             <form action='remove_from_cart_execute.php' method='POST'>";
+               echo "              <input type ='hidden' name ='no' value ='";
+               echo                     $rows['no'];
                echo "                   '/>";
                echo "              <input type ='submit' value ='REMOVE' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
                echo "              </form>";       
@@ -236,7 +236,7 @@
                        echo "          </div>";
 
                        $grandTotal = $subTotal + 10;
-                       
+
                        echo "          <div class='col-6 text-right'>";
                        echo "            <strong>RM ";
                        echo $grandTotal;
