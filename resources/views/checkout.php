@@ -155,9 +155,12 @@
                }
 
                echo "            <th style='width:8%' style='text-align:center;'>";
-               echo "             <form action='edit-book.php' method='get'>";
-               echo "              <input type ='hidden' name ='isbn' value ='";
-               echo                     $rows['isbn'];
+               echo "             <form action='minus_quantity_cart_execute.php' method='POST'>";
+               echo "              <input type ='hidden' name ='no' value ='";
+               echo                     $rows['no'];
+               echo "                   '/>";
+               echo "              <input type ='hidden' name ='quantity' value ='";
+               echo                     $rows['quantity'];
                echo "                   '/>";
                echo "              <input type ='submit' value ='-' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
                echo "              </form>";       
@@ -168,9 +171,12 @@
                echo "            </h7></th>";
    
                echo "            <th style='width:8%' style='text-align:right;'>";
-               echo "             <form action='delete_books_execute.php' method='POST'>";
-               echo "              <input type ='hidden' name ='isbn' value ='";
-               echo                     $rows['isbn'];
+               echo "             <form action='add_quantity_cart_execute.php' method='POST'>";
+               echo "              <input type ='hidden' name ='no' value ='";
+               echo                     $rows['no'];
+               echo "                   '/>";
+               echo "              <input type ='hidden' name ='quantity' value ='";
+               echo                     $rows['quantity'];
                echo "                   '/>";
                echo "              <input type ='submit' value ='+' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
                echo "              </form>";       
