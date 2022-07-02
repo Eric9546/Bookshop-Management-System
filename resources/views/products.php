@@ -165,15 +165,19 @@ while ($rows = $result->fetch_assoc())
       echo "      <p>";
       echo $rows['bookDesc'];
       echo "</p>";
-      echo "             <form action='add_to_cart_execute.php' method='POST'>";
-      echo "              <input type ='hidden' name ='isbn' value ='";
-      echo                $rows['isbn'];
-      echo "              '/>";
-      echo "              <input type ='hidden' name ='custId' value ='";
-      echo                $_SESSION ['id'];
-      echo "              '/>";
-      echo "              <input type ='submit' value ='Add To Cart' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
-      echo "              </form>";   
+
+      if (isset ($_SESSION ['id']) && $_SESSION['access'] == "Customer")
+      {
+        echo "             <form action='add_to_cart_execute.php' method='POST'>";
+        echo "              <input type ='hidden' name ='isbn' value ='";
+        echo                $rows['isbn'];
+        echo "              '/>";
+        echo "              <input type ='hidden' name ='custId' value ='";
+        echo                $_SESSION ['id'];
+        echo "              '/>";
+        echo "              <input type ='submit' value ='Add To Cart' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+        echo "              </form>";  
+      } 
       echo "    </div>";
       echo "  </div>";
       echo "</div>";
