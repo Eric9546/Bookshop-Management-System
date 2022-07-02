@@ -118,7 +118,7 @@
                    <div class="row">
 
      <!--Table-->
-                   <table padding='15' width='100%' border ='1'>
+      <table padding='15' width='100%' border ='1'>
             <tr>
                 <th style='width:11%'><h4><strong>ISBN</strong></h3></th>
                 <th style='width:23%'><h4><strong>Book Name</strong></h3></th>
@@ -186,7 +186,7 @@
           }
             ?>
 
-          </table>
+    </table>
                    </div>
               </form>
 

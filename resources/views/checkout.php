@@ -94,76 +94,157 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor sit amet</h4>
               <h2>Checkout</h2>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+                    
     <div class="products call-to-action">
       <div class="container">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="row">
-                  <div class="col-6">
-                       <em>Sub-total</em>
-                  </div>
-                  
-                  <div class="col-6 text-right">
-                       <strong>$ 128.00</strong>
-                  </div>
-             </div>
-          </li>
+
+      <div class="row">
+      <table padding='15' width='100%' border ='1'>
+            <tr>
+                <th style='width:11%'><h4><strong>ISBN</strong></h3></th>
+                <th style='width:28%'><h4><strong>Book Name</strong></h3></th>
+                <th style='width:11%'><h4><strong>Retail Price</strong></h3></th>
+                <th style='width:8%'><h4><strong></strong></h3></th>
+                <th style='width:12%'><h4><strong>Quantity</strong></h3></th>
+                <th style='width:8%'><h4><strong></strong></h3></th>
+                <th style='width:12%'><h4><strong>Total</strong></h3></th>
+                <th style='width:10%'><h4><strong></strong></h3></th>
+            </tr>
+
+        <?php
+
+          $subTotal = 0;
+
+          // Establishing connection to database //
+          $connection = mysqli_connect ('localhost', 'root', '');
+		
+          mysqli_select_db ($connection, 'lastrow_bookstore');
+
+          $custId = $_SESSION ['id'];
+
+          $query = "SELECT * FROM checkout WHERE custId ='$custId' AND status = 'notYetCheckedOut'";
+
+          $result = mysqli_query ($connection, $query);
+
+          while ($rows = $result->fetch_assoc())
+          {
+               echo "        <tr> ";
+               echo "            <th style='width:11%'><h7>";
+               echo              $rows['isbn'];
+               echo "            </h7></th>";
+
+               $tempIsbn = $rows['isbn'];
+               $retailPrice = 0;
+               $query2 = "SELECT * FROM stock WHERE isbn ='$tempIsbn'";
+               $result2 = mysqli_query ($connection, $query2);
+               while ($rows2 = $result2->fetch_assoc())
+               {
+                    $retailPrice = $rows2['retailPrice'];
+                    echo "            <td style='width:28%'><h7><b>        ";
+                    echo              $rows2['bookName'];
+                    echo "            </b></h7></td>";
+                    echo "            <th style='width:11%'><h7>RM ";
+                    echo              $rows2['retailPrice'];
+                    echo "            </h7></th>";
+               }
+
+               echo "            <th style='width:8%' style='text-align:center;'>";
+               echo "             <form action='edit-book.php' method='get'>";
+               echo "              <input type ='hidden' name ='isbn' value ='";
+               echo                     $rows['isbn'];
+               echo "                   '/>";
+               echo "              <input type ='submit' value ='-' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+               echo "              </form>";       
+               echo "            </th>";
+
+               echo "            <th style='width:12%' style='text-align:center;'><h7>";
+               echo              $rows['quantity'];
+               echo "            </h7></th>";
+   
+               echo "            <th style='width:8%' style='text-align:right;'>";
+               echo "             <form action='delete_books_execute.php' method='POST'>";
+               echo "              <input type ='hidden' name ='isbn' value ='";
+               echo                     $rows['isbn'];
+               echo "                   '/>";
+               echo "              <input type ='submit' value ='+' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+               echo "              </form>";       
+               echo "            </th>";
+
+               $total = $retailPrice * $rows['quantity'];
+
+               echo "            <th style='width:12%'><h7>RM ";
+               echo              $total;
+               echo "            </h7></th>";
+
+               echo "            <th style='width:10%' style='text-align:right;'>";
+               echo "             <form action='delete_books_execute.php' method='POST'>";
+               echo "              <input type ='hidden' name ='isbn' value ='";
+               echo                     $rows['isbn'];
+               echo "                   '/>";
+               echo "              <input type ='submit' value ='REMOVE' class='btn btn-primary border-width-2 d-none d-lg-inline-block'/>";
+               echo "              </form>";       
+               echo "            </th>";
+   
+               echo "        </tr>";
+               $subTotal = $subTotal + $total;
+          }
+
           
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Extra</em>
-                    </div>
+            
 
-                    <div class="col-6 text-right">
-                         <strong>$ 0.00</strong>
-                    </div>
-               </div>
-          </li>
+          echo "</table>";
+          echo "</div>      ";      
 
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Tax</em>
-                    </div>
+          echo "<ul class='list-group list-group-flush'>";
+          echo "<li class='list-group-item'>";
+          echo " <div class='row'>";
+          echo "        <div class='col-6'>";
+          echo "            <em>Sub-total</em>";
+                       echo "        </div>";
+                  
+                       echo "       <div class='col-6 text-right'>";
+                       echo "            <strong>RM ";
+                       echo $subTotal;
+                       echo "            </strong>";
+                       echo "       </div>";
+                       echo "   </div>";
+                       echo "</li>";
+          
+          
+                       echo "<li class='list-group-item'>";
+                       echo "     <div class='row'>";
+                       echo "          <div class='col-6'>";
+                       echo "               <em>Shipping Fee</em>";
+                       echo "          </div>";
 
-                    <div class="col-6 text-right">
-                         <strong>$ 10.00</strong>
-                    </div>
-               </div>
-          </li>
+                       echo "           <div class='col-6 text-right'>";
+                       echo "               <strong>RM 10.00</strong>";
+                       echo "          </div>";
+                       echo "     </div>";
+                       echo "</li>";
 
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Total</em>
-                    </div>
+                       echo "<li class='list-group-item'>";
+                       echo "     <div class='row'>";
+                       echo "          <div class='col-6'>";
+                       echo "               <em>Grand-Total</em>";
+                       echo "          </div>";
 
-                    <div class="col-6 text-right">
-                         <strong>$ 138.00</strong>
-                    </div>
-               </div>
-          </li>
-
-          <li class="list-group-item">
-               <div class="row">
-                    <div class="col-6">
-                         <em>Deposit payment required</em>
-                    </div>
-
-                    <div class="col-6 text-right">
-                         <strong>$ 20.00</strong>
-                    </div>
-               </div>
-          </li>
+                       $grandTotal = $subTotal + 10;
+                       
+                       echo "          <div class='col-6 text-right'>";
+                       echo "            <strong>RM ";
+                       echo $grandTotal;
+                       echo "            </strong>";
+                       echo "          </div>";
+                       echo "     </div>";
+                       echo "</li>";
+          ?>
         </ul>
 
         <br>

@@ -122,7 +122,7 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Featured Book</h2>
-              <a href="products.html">view more <i class="fa fa-angle-right"></i></a>
+              <a href="products.php">view more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
 
@@ -148,11 +148,11 @@
                {
                 echo "<div class='col-md-4'>";
                 echo "  <div class='product-item'>";
-                echo "    <a href='product-details.html'><img src='assets/images/bookCovers/";
+                echo "    <a href='products.php'><img src='assets/images/bookCovers/";
                 echo $rows_2['pictureUrl'];
                 echo "' alt=''></a>";
                 echo "    <div class='down-content'>";
-                echo "      <a href='product-details.html'><h4>";
+                echo "      <a href='products.php'><h4>";
                 echo $rows_2['bookName'];
                 echo "</h4></a>";
                 echo "<h6>RM ";
