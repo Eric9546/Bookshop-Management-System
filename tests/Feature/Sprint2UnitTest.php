@@ -34,11 +34,11 @@ class Sprint2UnitTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_admin_view_customer_payment_history_page()
+    public function test_admin_view_customer_purchase_history_page()
     {
-        $response = $this->get('/customer-payment-history.php');
+        $response = $this->get('/admin-purchase-history.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_admin_edit_books_page()

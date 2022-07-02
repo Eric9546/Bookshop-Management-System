@@ -29,37 +29,37 @@ class Sprint3UnitTest extends TestCase
 
     public function test_customer_add_books_page()
     {
-        $response = $this->get('/index.php');
+        $response = $this->get('/checkout.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_customer_remove_books_page()
     {
-        $response = $this->get('/index.php');
+        $response = $this->get('/checkout.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_customer_update_books_page()
     {
-        $response = $this->get('/index.php');
+        $response = $this->get('/checkout.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_customer_checkout_page()
     {
-        $response = $this->get('/index.php');
+        $response = $this->get('/checkout.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
-    public function test_customer_payment_history_page()
+    public function test_customer_purchase_history_page()
     {
-        $response = $this->get('/customer-payment-history.php');
+        $response = $this->get('/customer-purchase-history.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
 }

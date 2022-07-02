@@ -32,39 +32,39 @@ class Sprint3IntegrationTest extends TestCase
     public function test_customer_login_view_cart()
     {
         $response = $this->get('/login.php');
-        $response = $this->get('/index.php');
+        $response = $this->get('/checkout.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_customer_login_add_remove_update_cart()
     {
         $response = $this->get('/login.php');
-        $response = $this->get('/index.php');
+        $response = $this->get('/checkout.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_customer_login_view_purchase_history()
     {
         $response = $this->get('/login.php');
-        $response = $this->get('/customer-payment-history.php');
+        $response = $this->get('/customer-purchase-history.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_admin_login_view_purchase_history()
     {
         $response = $this->get('/login.php');
-        $response = $this->get('/customer-payment-history.php');
+        $response = $this->get('/admin-purchase-history.php');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 
     public function test_admin_login_add_remove_update_stock()
     {
         $response = $this->get('/login.php');
-        $response = $this->get('/index.php');
+        $response = $this->get('/check-stock.php');
 
         $response->assertStatus(200);
     }
