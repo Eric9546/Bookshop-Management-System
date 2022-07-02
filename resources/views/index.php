@@ -46,7 +46,14 @@
                           echo "</div>";
                           echo "</li>";
 
-                          echo '<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>';
+                          echo "<li class='nav-item dropdown'>";
+                          echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Payments</a>";
+                          
+                          echo "<div class='dropdown-menu'>";
+                          echo "  <a class='dropdown-item' href='checkout.php'>Checkout</a>";
+                          echo "  <a class='dropdown-item' href='customer-purchase-history.php'>Purchase History</a>";
+                          echo "</div>";
+                          echo "</li>";
                         }
                         else if($_SESSION['access'] == "Admin")
                         {
@@ -56,7 +63,7 @@
                           echo "<div class='dropdown-menu'>";
                           echo "  <a class='dropdown-item' href='check-stock.php'>Check Stock</a>";
                           echo "  <a class='dropdown-item' href='featured-books-manage.php'>Manage Featured Books</a>";
-                          echo "  <a class='dropdown-item' href='customer-payment-history.php'>View Customer Payment History</a>";
+                          echo "  <a class='dropdown-item' href='admin-purchase-history.php'>View Customer Purchase History</a>";
                           echo "</div>";
                           echo "</li>";
                         }

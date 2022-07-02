@@ -29,7 +29,7 @@
 
         mysqli_select_db ($connection, 'lastrow_bookstore');
 
-        $sql = "INSERT INTO checkout (custId, isbn, quantity, status, postageId)VALUES ('$custId', '$isbn', 1, 'notYetCheckedOut', 'null')";
+        $sql = "INSERT INTO checkout (custId, isbn, quantity, status, paymentId)VALUES ('$custId', '$isbn', 1, 'notYetCheckedOut', 'null')";
 
         if($result = mysqli_query ($connection, $sql))
         {

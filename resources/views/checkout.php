@@ -46,7 +46,14 @@
                           echo "</div>";
                           echo "</li>";
 
-                          echo '<li class="nav-item"><a class="nav-link" href="checkout.php">Checkout</a></li>';
+                          echo "<li class='nav-item dropdown'>";
+                          echo "<a class='nav-link dropdown-toggle' data-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>Payments</a>";
+                          
+                          echo "<div class='dropdown-menu'>";
+                          echo "  <a class='dropdown-item' href='checkout.php'>Checkout</a>";
+                          echo "  <a class='dropdown-item' href='customer-purchase-history.php'>Purchase History</a>";
+                          echo "</div>";
+                          echo "</li>";
                         }
                         else if($_SESSION['access'] == "Admin")
                         {
@@ -56,6 +63,7 @@
                           echo "<div class='dropdown-menu'>";
                           echo "  <a class='dropdown-item' href='check-stock.php'>Check Stock</a>";
                           echo "  <a class='dropdown-item' href='featured-books-manage.php'>Manage Featured Books</a>";
+                          echo "  <a class='dropdown-item' href='admin-purchase-history.php'>View Customer Purchase History</a>";
                           echo "</div>";
                           echo "</li>";
                         }
@@ -103,18 +111,20 @@
                     
     <div class="products call-to-action">
       <div class="container">
-
       <div class="row">
+          <h4><strong>Shopping Cart</strong></h4>
+          <br>
+          <br>
       <table padding='15' width='100%' border ='1'>
             <tr>
-                <th style='width:11%'><h4><strong>ISBN</strong></h3></th>
-                <th style='width:28%'><h4><strong>Book Name</strong></h3></th>
-                <th style='width:11%'><h4><strong>Retail Price</strong></h3></th>
-                <th style='width:8%'><h4><strong></strong></h3></th>
-                <th style='width:12%'><h4><strong>Quantity</strong></h3></th>
-                <th style='width:8%'><h4><strong></strong></h3></th>
-                <th style='width:12%'><h4><strong>Total</strong></h3></th>
-                <th style='width:10%'><h4><strong></strong></h3></th>
+                <th style='width:11%'><h4><strong>ISBN</strong></h4></th>
+                <th style='width:28%'><h4><strong>Book Name</strong></h4></th>
+                <th style='width:11%'><h4><strong>Retail Price</strong></h4></th>
+                <th style='width:8%'><h4><strong></strong></h4></th>
+                <th style='width:12%'><h4><strong>Quantity</strong></h4></th>
+                <th style='width:8%'><h4><strong></strong></h4></th>
+                <th style='width:12%'><h4><strong>Total</strong></h4></th>
+                <th style='width:10%'><h4><strong></strong></h4></th>
             </tr>
 
         <?php
@@ -257,42 +267,19 @@
         
         <div class="inner-content">
           <div class="contact-form">
-              <form action="#">
+          <h4><strong>Check Out</strong></h4>
+               <form action="complete_payment_execute.php" method="post">
                    <div class="row">
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
-                                  <label class="control-label">Title:</label>
-                                  <select class="form-control" data-msg-required="This field is required.">
-                                       <option value="">-- Choose --</option>
-                                       <option value="dr">Dr.</option>
-                                       <option value="miss">Miss</option>
-                                       <option value="mr">Mr.</option>
-                                       <option value="mrs">Mrs.</option>
-                                       <option value="ms">Ms.</option>
-                                       <option value="other">Other</option>
-                                       <option value="prof">Prof.</option>
-                                       <option value="rev">Rev.</option>
-                                  </select>
-                             </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                             <div class="form-group">
-                                  <label class="control-label">Name:</label>
-                                  <input type="text" class="form-control">
-                             </div>
-                        </div>
-                   </div>
-                   <div class="row">
-                        <div class="col-sm-6 col-xs-12">
-                             <div class="form-group">
-                                  <label class="control-label">Email:</label>
-                                  <input type="text" class="form-control">
+                                  <label class="control-label">Receiver Name:</label>
+                                  <input type="text" class="form-control" name="receiverName" id="receiverName">
                              </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
                                   <label class="control-label">Phone:</label>
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="phoneNumber" id="phoneNumber">
                              </div>
                         </div>
                    </div>
@@ -300,13 +287,13 @@
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
                                   <label class="control-label">Address 1:</label>
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="addressOne" id="addressOne">
                              </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
                                   <label class="control-label">Address 2:</label>
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="addressTwo" id="addressTwo">
                              </div>
                         </div>
                    </div>
@@ -314,42 +301,28 @@
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
                                   <label class="control-label">City:</label>
-                                  <input type="text" class="form-control">
+                                  <input type="text" class="form-control" name="city" id="city">
                              </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
                                   <label class="control-label">State:</label>
-                                  <input type="text" class="form-control">
-                             </div>
-                        </div>
-                   </div>
-                   <div class="row">
-                        <div class="col-sm-6 col-xs-12">
-                             <div class="form-group">
-                                  <label class="control-label">Zip:</label>
-                                  <input type="text" class="form-control">
-                             </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
-                             <div class="form-group">
-                                  <label class="control-label">Country:</label>
-                                  <select class="form-control">
-                                       <option value="">-- Choose --</option>
-                                       <option value="">-- Choose --</option>
-                                       <option value="">-- Choose --</option>
-                                       <option value="">-- Choose --</option>
-                                  </select>
+                                  <input type="text" class="form-control" name="state" id="state">
                              </div>
                         </div>
                    </div>
 
                    <div class="row">
+                         <div class="col-sm-6 col-xs-12">
+                             <div class="form-group">
+                                  <label class="control-label">Postcode:</label>
+                                  <input type="text" class="form-control" name="postcode" id="postcode">
+                             </div>
+                        </div>
                         <div class="col-sm-6 col-xs-12">
                              <div class="form-group">
                                   <label class="control-label">Payment method</label>
-
-                                  <select class="form-control">
+                                  <select class="form-control" name="paymentMethod" id="paymentMethod">
                                        <option value="">-- Choose --</option>
                                        <option value="bank">Bank account</option>
                                        <option value="cash">Cash</option>
@@ -357,27 +330,10 @@
                                   </select>
                              </div>
                         </div>
-
-                        <div class="col-sm-6 col-xs-12">
-                             <div class="form-group">
-                                  <label class="control-label">Captcha</label>
-                                  <input type="text" class="form-control">
-                             </div>
-                        </div>
                    </div>
 
-                   <div class="form-group">
-                        <label class="control-label">
-                             <input type="checkbox">
-
-                             I agree with the <a href="terms.html" target="_blank">Terms &amp; Conditions</a>
-                        </label>
-                   </div>
-
-                   <div class="clearfix">
-                        <button type="button" class="filled-button pull-left">Back</button>
-                        
-                        <button type="submit" class="filled-button pull-right">Finish</button>
+                   <div class="clearfix">                        
+                        <button type="submit" class="filled-button pull-right">Proceed</button>
                    </div>
               </form>
           </div>

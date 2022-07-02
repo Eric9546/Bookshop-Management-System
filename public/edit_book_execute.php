@@ -33,8 +33,6 @@
 
         mysqli_select_db ($connection, 'lastrow_bookstore');
 
-        "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-
         $sql = "UPDATE stock SET isbn='$isbn', bookName='$bookName', author='$author', publishDate='$publishDate', bookDesc='$bookDesc', tradePrice='$tradePrice', retailPrice='$retailPrice', quantity='$quantity' WHERE isbn='$isbn'";
 
         if($result = mysqli_query ($connection, $sql))
