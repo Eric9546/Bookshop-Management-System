@@ -7,7 +7,7 @@ The project is a Bookshop Management System (BMS). The web application will have
 
 Database: MySQL, PHPMyAdmin
 
-Frameworks: Laravel, jQuery, PHP Unit, Composer Ununsed
+Frameworks: Laravel, jQuery, PHP Unit, Composer Unused
 
 Languages: HTML, CSS, PHP, JavaScript
 
