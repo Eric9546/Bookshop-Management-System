@@ -23,33 +23,31 @@ The home page for visitors with no login
 
 **Login Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_2cd6beaa149ba686.png)
+![This is an image](https://i.imgur.com/c5y7ICI.png)
 
 The login page for customers
 
 **Registration Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_7e9da9129dc4914b.png)
+![This is an image](https://i.imgur.com/xtiLnZv.png)
 
 The registration page for new customers
 
 **Home Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_455b1953f41956d9.png) ![](RackMultipart20220712-1-5c0zyk_html_6ae2075d72c8ba4c.png)
+![This is an image](https://i.imgur.com/UuuGB8F.png)
 
 The home page for logged in customers
 
 **Checkout Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_9b61d2aa5997e3ff.png)
-
-![](RackMultipart20220712-1-5c0zyk_html_a7024ea438954321.png)
+![This is an image](https://i.imgur.com/0lx4UtU.png)
 
 The checkout and payment page for customers
 
 **Purchase History Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_ee8dfac96fbc20b9.png)
+![This is an image](https://i.imgur.com/reDqcbL.png)
 
 The purchase history page for customers
 
@@ -57,30 +55,24 @@ The purchase history page for customers
 
 **Login Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_e47570e5b61832b9.png)
+![This is an image](https://i.imgur.com/c5y7ICI.png)
 
 The login page for admins
 
-**Home Page**
-
-![](RackMultipart20220712-1-5c0zyk_html_e757beb553789a4f.png) ![](RackMultipart20220712-1-5c0zyk_html_69261839c6718d8b.png)
-
-The home page for admins
-
 **Check Stock Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_b83d2d21857f4a52.png)
+![This is an image](https://i.imgur.com/FmJYG8c.png)
 
 The check stock page where admins can edit or delete books
 
 **Manage Featured Books Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_f222407f24839b16.png)
+![This is an image](https://i.imgur.com/UpDvrmU.png)
 
 The manage featured books page allows admin to add or remove books from the home page
 
 **View Customer Payment History Page**
 
-![](RackMultipart20220712-1-5c0zyk_html_f44233715f81ed98.png)
+![This is an image](https://i.imgur.com/PmL87b8.png)
 
 The page where admins can view customer&#39;s purchase history
