@@ -15,7 +15,7 @@ Languages: HTML, CSS, PHP, JavaScript
 
 ***Home Page***
 
-![This is an image](https://imgur.com/a/J9VxuoA)
+[Imgur](https://i.imgur.com/PKfXFGi.png)
 
 The home page for visitors with no login
 
