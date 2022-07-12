@@ -9,7 +9,7 @@ Database: MySQL, PHPMyAdmin
 
 Frameworks: Laravel, jQuery, PHP Unit, Composer Unused
 
-Languages: HTML, CSS, PHP, JavaScript
+Programming Languages: HTML, CSS, PHP, JavaScript
 
 **Visitor Perspective of Functions**
 
