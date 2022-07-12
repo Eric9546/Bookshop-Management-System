@@ -13,7 +13,7 @@ Languages: HTML, CSS, PHP, JavaScript
 
 **Visitor Perspective of Functions**
 
-**Home Page**
+***Home Page***
 
 ![](RackMultipart20220712-1-5c0zyk_html_6a6b8680427178d9.png) ![](RackMultipart20220712-1-5c0zyk_html_69261839c6718d8b.png)
 
