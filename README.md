@@ -14,7 +14,9 @@ Languages: HTML, CSS, PHP, JavaScript
 **Visitor Perspective of Functions**
 
 ***Home Page***
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+
+![This is an image](https://imgur.com/a/J9VxuoA)
+
 The home page for visitors with no login
 
 **Customer Perspective of Functions**
